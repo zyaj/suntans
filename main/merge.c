@@ -202,7 +202,7 @@ void FreeMergingArrays(gridT *grid, int myproc) {
 
   // Only processor 0 needed the temporary array storing the entire grid
   if(myproc==0) {
-    for(i=0;i<grid->Nkmax;i++)
+    for(i=0;i<grid->Nc;i++)
       SunFree(merged3DArray[i],grid->Nkmax*sizeof(REAL),"FreeMergingArrays");
     SunFree(merged3DArray,mergedGrid->Nc*sizeof(REAL *),"FreeMergingArrays");
     SunFree(merged2DArray,mergedGrid->Nc*sizeof(REAL),"FreeMergingArrays");
